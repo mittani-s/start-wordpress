@@ -1,3 +1,5 @@
+@use "sass:map";
+
 /*----------------------------------------------------------*/
 // メディアクエリ設定
 /*----------------------------------------------------------*/
@@ -8,8 +10,8 @@ $breakpoints: (
     "pc": "screen and (min-width: #{$layout-width-inner})",
 );
 
-@mixin mq($breakpoint: sp) {
-    @media #{map-get($breakpoints, $breakpoint)} {
+@mixin mq($breakpoint) {
+    @media #{map.get($breakpoints, $breakpoint)} {
         @content;
     }
 }
